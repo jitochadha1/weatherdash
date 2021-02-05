@@ -7,13 +7,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/font-awesome-4.7.0-2/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <title>Weather Dash</title>
 </head>
 
 <body class="flex-column min-100-vh">
   <header class="hero">
-    <h1 class="app-title"><i class="fab fa-github"></i> Weather Dash</h1>
+    <h1 class="app-title"><i class="fa fa-thermometer-full" aria-hidden="true"></i> Weather Dash</h1>
     <p>Search for a GitHub user or click on a language to see a list of repositories and how many open issues they have!
     </p>
   </header>
@@ -23,23 +25,45 @@
     <div class="col-12 col-md-4">
       <div class="card">
         <h3 class="card-header text-uppercase">Search for a city</h3>
-        <form id="user-form" class="card-body">
+        <form onsubmit="return false;" id="user-form" class="card-body">
           <!-- <label class="form-label" for="username">Username</label> -->
-          <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-          <button type="submit" class="btn"><i class="fab fa-github"></button>
+          <input id="city-name" type="text" autofocus="true" class="form-input" />
+          <button id="search-submit" type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
       </div>
     </div>
 
     <div class="col-12 col-md-8">
-      <h2 class="subtitle">Showing Repositories for: <span id="repo-search-term"></span></h2>
-      <div id="repos-container" class="list-group">
+      <div id="current-weather-container">
+        <h2 class="subtitle">
+          <span id="city-search-term">Atlanta</span>
+          <span id="current-date">(2/4/2021)</span>
+        </h2>
+        <div>
+          <span class="current-weather-property">
+            Temperature: <span id="current-temperature"></span>F
+          </span>
+          <span class="current-weather-property">
+            Humidity: <span id="current-humidity"></span>%
+          </span>
+          <span class="current-weather-property">
+            Wind Speed: <span id="current-wind-speed"></span>MPH
+          </span>
+          <span class="current-weather-property">
+            UV-Index: <span id="current-uv-index"></span>
+          </span>
 
+        </div>
+      </div>
+
+      <div id="forecast-container" class="list-group">
+        <h2 class="subtitle">5-Day Forecast:</h2>
+        <div id="forecast-cards"></div>
       </div>
     </div>
   </main>
 
-  <script src="./assets/js/homepage.js"></script>
+  <script src="assets/js/script.js"></script>
 
 </body>
 
