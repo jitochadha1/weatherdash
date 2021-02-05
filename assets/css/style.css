@@ -144,6 +144,7 @@ p {
   display: flex;
   flex-direction: column;
   width: 110px;
+  padding: 15px;
 }
 
 .weather-icon {
