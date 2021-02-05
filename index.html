@@ -16,8 +16,6 @@
 <body class="flex-column min-100-vh">
   <header class="hero">
     <h1 class="app-title"><i class="fa fa-thermometer-full" aria-hidden="true"></i> Weather Dash</h1>
-    <p>Search for a GitHub user or click on a language to see a list of repositories and how many open issues they have!
-    </p>
   </header>
 
 
@@ -25,19 +23,22 @@
     <div class="col-12 col-md-4">
       <div class="card">
         <h3 class="card-header text-uppercase">Search for a city</h3>
-        <form onsubmit="return false;" id="user-form" class="card-body">
+        <form id="user-form" class="card-body">
           <!-- <label class="form-label" for="username">Username</label> -->
           <input id="city-name" type="text" autofocus="true" class="form-input" />
-          <button id="search-submit" type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <button id="search-submit" type="button" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
         </form>
+      </div>
+      <div id="search-history">
+
       </div>
     </div>
 
     <div class="col-12 col-md-8">
       <div id="current-weather-container">
         <h2 class="subtitle">
-          <span id="city-search-term">Atlanta</span>
-          <span id="current-date">(2/4/2021)</span>
+          <span id="city-search-term"></span>
+          <span id="current-date"></span>
         </h2>
         <div>
           <span class="current-weather-property">
